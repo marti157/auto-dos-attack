@@ -1,0 +1,6 @@
+if (ip.src == 'TARGET IP' || ip.dst == 'TARGET IP')
+{
+drop();
+kill();
+msg("Sending Packets\n");
+}
