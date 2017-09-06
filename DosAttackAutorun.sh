@@ -2,8 +2,7 @@
 # Dos Attack Autorun
 # By Marti157
 
-# Everything will be done in the directory from where this
-# script is run
+# Please have the DosAttack.elt in the same directory that this script is run from.
 
 echo "Checking if DosAttack.elt exists…"
 
