@@ -29,7 +29,7 @@ To install on Mac OS you need to use Homebrew. Install Homebrew with this code:
 ```
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
-Then, install Ettercap with homebrew:
+Then, install Ettercap with Homebrew:
 ```
 brew install ettercap
 ```
