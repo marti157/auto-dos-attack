@@ -16,57 +16,57 @@ instructions:
 ### Linux:
 
 To install on most Linux devices, use this code:
-´´´
+```
 sudo apt-get install zlib1g zlib1g-dev
 sudo apt-get install build-essential
 sudo apt-get install ettercap-gtk
-´´´
+```
 If you get an error, look up the install code for your Linux OS.
 
 ### Mac:
 
 To install on Mac OS you need to use Homebrew. Install Homebrew with this code:
-´´´
+```
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-´´´
+```
 Then, install Ettercap with homebrew:
-´´´
+```
 brew install ettercap
-´´´
+```
 If you want the GUI version of Ettercap, use this code (we only need the standard version for
 this attack):
-´´´
+```
 brew install ettercap --with-gtk+
-´´´
+```
 
 Ok, now that we have Ettercap installed, let's proceed.
 
 ## Setting it up
 
-Open the WifiKillMac.py script with any text editor and edit the password line with
-the victim's computer's sudo password. Make sure the user is a sudoer.
+Modify the "DosAttack.elt" file with any text editor. Where it says "TARGET IP" twice, change with
+your victim's local IP. I recommend using nmap to find the IP.
 
 ```
-while loop == 1:
-	"sudo ifconfig en0 down"
-	"YourSudoPassword"
-	time.sleep(10)
+if (ip.src == 'TARGET IP' || ip.dst == 'TARGET IP')
 ```
 
 ## Running
 
-Once you have the script on the victim's computer, navigate to the directory where it
-is located and run using this command:
+Once you have finished editing the file, open the terminal and navigate to the cloned repository's directory.
+Then, execute this code:
 
 ```
-sudo python WifiKillMac.py &
+./DosAttackAutorun
 ```
-The "&" at the end makes the script run unlimitedly in the background.
+This will run the script. It will compile the file that we edited before and start the attack.
+It will ask you for the target IP again, input the same one you put in the file. It will then ask
+you for your network interface. To find out what interface you have, use the "ifconfig" command.
+It is usually "wlan0" or "eth0", or if you are using mac, "en0", but check anyway.
 
-## Persistance
+## Results
 
-The script stops running when the computer is restarted, but there is a way to get round
-this. You can use Automator to run a script that executes the script when the computer boots up. Look at [this](https://developer.apple.com/library/content/documentation/AppleApplications/Conceptual/AutomatorConcepts/Articles/ShellScriptActions.html) for more information.
+The script will make Ettercap send a ton of packets to the target device, and it will deny it's service
+(that's what DoS stands for).
 
 ## Version and Contributing
 
