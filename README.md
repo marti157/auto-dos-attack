@@ -19,7 +19,7 @@ To install on most Linux devices, use this code:
 ```
 sudo apt-get install zlib1g zlib1g-dev
 sudo apt-get install build-essential
-sudo apt-get install ettercap-gtk
+sudo apt-get install ettercap-graphical
 ```
 If you get an error, look up the install code for your Linux OS.
 
